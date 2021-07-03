@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cart page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="Style.css">
+        <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    </head>
+    <body>
+        <!--Top Left Page-->
+        <div class="TopLeft">
+            Home > Cart
+        </div>
+        <!--Top Right Page-->
+        <div class="Logo">
+            <img src="images/logo2.png" alt="logo">
+        </div>
+        <!--Navigation-->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a>&emsp;</li> 
+                <li><a href="Cart.html">Cart</a>&emsp;</li>
+                <li><a href="Wishlist.html">Wishlist</a>&emsp;</li>
+                <li><a href="About.html">About</a>&emsp;</li>
+                <li><a href="Contact.html">Contact us</a>&emsp;</li>
+                <li><a href="Login.html">Login</a></li>
+
+            </ul>
+        </nav>
+        <div class="shopping-cart">
+            <!-- Title -->
+            <div class="title">
+              Shopping Bag
+            </div>
+      
+            <!-- Product #1 -->
+            <div class="item">
+              <div class="buttons">
+                <span class="delete-btn"></span>
+                <span class="like-btn"></span>
+              </div>
+      
+              <div class="image">
+                <img src="foodandbeveragePic/sprite.png" alt="sprite" />
+              </div>
+      
+              <div class="description">
+                <span>Sprite Drink Bottle 6 X 330ml</span>
+              </div>
+      
+              <div class="quantity">
+                <button class="plus-btn" type="button" name="button">
+                  <img src="plus.svg" alt="plus" />
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                  <img src="minus.svg" alt="minus" />
+                </button>
+              </div>
+      
+              <div class="total-price">RM 10.00</div>
+            </div>
+      
+            <!-- Product #2 -->
+            <div class="item">
+              <div class="buttons">
+                <span class="delete-btn"></span>
+                <span class="like-btn"></span>
+              </div>
+      
+              <div class="image">
+                <img src="foodandbeveragePic/jasmine.png" alt="Rice"/>
+              </div>
+      
+              <div class="description">
+                <span>Jasmine Rice 5KG</span>
+              </div>
+      
+              <div class="quantity">
+                <button class="plus-btn" type="button" name="button">
+                  <img src="plus.svg" alt="plus" />
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                  <img src="minus.svg" alt="minus" />
+                </button>
+              </div>
+      
+              <div class="total-price">RM 15.99</div>
+            </div>
+      
+            <!-- Product #3 -->
+            <div class="item">
+              <div class="buttons">
+                <span class="delete-btn"></span>
+                <span class="like-btn"></span>
+              </div>
+      
+              <div class="image">
+                <img src="foodandbeveragePic/tuna.jpg" alt="tuna" />
+              </div>
+      
+              <div class="description">
+                <span>Tuna Ayam Brand</span>
+
+              </div>
+      
+              <div class="quantity">
+                <button class="plus-btn" type="button" name="button">
+                  <img src="plus.svg" alt="plus" />
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                  <img src="minus.svg" alt="minus" />
+                </button>
+              </div>
+      
+              <div class="total-price">RM 4.90</div>
+            </div>
+            <!--Checkout Button-->
+        <div class="Checkout">
+            <label><input type="submit" value="Proceed To Checkout"></label>
+        </div>
+    </div> 
+        <footer>
+            <!--copyright symbol &copy;-->
+            Copyright &copy; L&S Group
+            <!--Bottom right Page-->
+        <div class="LogoF">
+            <img src="images/logo2.png" alt="logo">
+        </div>
+     </footer>
+      
+          <script>
+            $('.minus-btn').on('click', function(e) {
+                  e.preventDefault();
+                  var $this = $(this);
+                  var $input = $this.closest('div').find('input');
+                  var value = parseInt($input.val());
+      
+                  if (value > 1) {
+                      value = value - 1;
+                  } else {
+                      value = 0;
+                  }
+      
+              $input.val(value);
+      
+              });
+      
+              $('.plus-btn').on('click', function(e) {
+                  e.preventDefault();
+                  var $this = $(this);
+                  var $input = $this.closest('div').find('input');
+                  var value = parseInt($input.val());
+      
+                  if (value < 100) {
+                    value = value + 1;
+                  } else {
+                      value =100;
+                  }
+      
+                  $input.val(value);
+              });
+      
+            $('.like-btn').on('click', function() {
+              $(this).toggleClass('is-active');
+            });
+          </script>
+        </body>
+      </html>
+      

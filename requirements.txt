@@ -1,0 +1,6 @@
+PyPDF2
+langchain
+langchain-community
+llm-prompting-gen
+openpyxl
+pandas
